@@ -21,7 +21,7 @@ export default class App extends Component {
     return (
       <SafeAreaView>
         <View>
-          <Text>R10</Text>
+          <Text style={{fontSize: 50, textAlign: 'center'}}>R10</Text>
         </View>
       </SafeAreaView>
     );
