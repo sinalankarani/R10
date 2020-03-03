@@ -1,13 +1,12 @@
 import React from 'react';
 import {Text, View, Image} from 'react-native';
 
-const About = props => {
+const MapScreen = props => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Image source={require('../../assets/images/r10_logo.png')} />
-      <Text>About</Text>
+      <Text>Map</Text>
     </View>
   );
 };
 
-export default About;
+export default MapScreen;

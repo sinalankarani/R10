@@ -1,24 +1,17 @@
 import React, {Component} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Image,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {SafeAreaView} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import RootNav from './navigation';
+import RootStackScreens from './navigation';
 
 export default class App extends Component {
   render() {
     return (
-      <SafeAreaView>
-        <ScrollView>
-          <View>
-            <Image source={require('./assets/images/r10_logo.png')} />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+      // <ApolloProvider client={client}>
+      <NavigationContainer>
+        <RootNav />
+      </NavigationContainer>
+      // </ApolloProvider>
     );
   }
 }
