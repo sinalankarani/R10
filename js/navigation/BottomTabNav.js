@@ -9,8 +9,8 @@ import MapScreen from '../screens/Map';
 import About from '../screens/About';
 import Faves from '../screens/Faves';
 import {sharedScreenOptions} from './config';
-const ScheduleStack = createStackNavigator();
 
+const ScheduleStack = createStackNavigator();
 const ScheduleStackScreens = props => (
   <ScheduleStack.Navigator screenOptions={sharedScreenOptions}>
     <ScheduleStack.Screen name="Schedule" component={Schedule} />
@@ -28,7 +28,7 @@ const MapStackScreens = props => (
 const FaveStack = createStackNavigator();
 const FaveStackScreens = props => (
   <FaveStack.Navigator
-    initialRouteName="Session"
+    initialRouteName="Faves"
     screenOptions={sharedScreenOptions}>
     <FaveStack.Screen name="Faves" component={Faves} />
     <FaveStack.Screen name="Session" component={Session} />

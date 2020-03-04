@@ -1,17 +1,18 @@
 import React from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
+import {Text, View} from 'react-native';
 
-const Schedule = props => {
+const Schedule = ({navigation, SessionList}) => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>Schedule</Text>
-      <TouchableOpacity onPress={() => props.navigation.navigate('Session')}>
+      <SessionList navigation={navigation} />
+      {/* <TouchableOpacity onPress={() => props.navigation.navigate('Session')}>
         <Text>Go to Session</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
-      <TouchableOpacity onPress={() => props.navigation.navigate('Speaker')}>
+      {/* <TouchableOpacity onPress={() => props.navigation.navigate('Speaker')}>
         <Text>Go to Speaker Modal</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 };

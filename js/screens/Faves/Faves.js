@@ -1,15 +1,11 @@
 import React from 'react';
-import {ScrollView, Text, View, Image} from 'react-native';
-import styles from './styles';
+import {Text, View, Image} from 'react-native';
 
-const Faves = ({data}) => {
+const Faves = props => {
   return (
-    <SafeAreaView>
-      <View>
-        <Image source={require('../../assets/images/r10_logo.png')} />
-        <Text>Faves</Text>
-      </View>
-    </SafeAreaView>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>Faves</Text>
+    </View>
   );
 };
 

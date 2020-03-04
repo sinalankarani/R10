@@ -1,17 +1,20 @@
 import React, {Component} from 'react';
-import {SafeAreaView} from 'react-native';
+import {ApolloProvider} from '@apollo/react-hooks';
+import client from './config/api';
 import {NavigationContainer} from '@react-navigation/native';
 import RootNav from './navigation';
-import RootStackScreens from './navigation';
+import FavesProvider from './context/FavesContext';
 
 export default class App extends Component {
   render() {
     return (
-      // <ApolloProvider client={client}>
-      <NavigationContainer>
-        <RootNav />
-      </NavigationContainer>
-      // </ApolloProvider>
+      <ApolloProvider client={client}>
+        <FavesProvider>
+          <NavigationContainer>
+            <RootNav />
+          </NavigationContainer>
+        </FavesProvider>
+      </ApolloProvider>
     );
   }
 }
