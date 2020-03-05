@@ -1,19 +1,11 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import SessionList from '../../components/SessionList';
 
-const Schedule = ({navigation, SessionList}) => {
+const Schedule = ({navigation, sessions}) => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Schedule</Text>
-      <SessionList navigation={navigation} />
-      {/* <TouchableOpacity onPress={() => props.navigation.navigate('Session')}>
-        <Text>Go to Session</Text>
-      </TouchableOpacity> */}
-
-      {/* <TouchableOpacity onPress={() => props.navigation.navigate('Speaker')}>
-        <Text>Go to Speaker Modal</Text>
-      </TouchableOpacity> */}
-    </View>
+    sessions.length > 0 && (
+      <SessionList navigation={navigation} sessions={sessions} />
+    )
   );
 };
 
