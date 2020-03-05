@@ -4,20 +4,60 @@ export const ALL_SESSIONS = gql`
   {
     allSessions {
       id
-      description
       title
+      description
       startTime
       speaker {
         id
+        name
         bio
         image
-        name
         session {
           id
         }
         url
       }
       location
+    }
+  }
+`;
+
+export const SINGLE_SESSION = gql`
+  query Session($id: ID!) {
+    Session(id: $id) {
+      id
+      description
+      location
+      speaker {
+        id
+        image
+        name
+      }
+      startTime
+      title
+    }
+  }
+`;
+
+export const CODE_OF_CONDUCT = gql`
+  {
+    allConducts {
+      id
+      title
+      description
+      order
+    }
+  }
+`;
+
+export const SINGLE_SPEAKER = gql`
+  query Speaker($id: ID!) {
+    Speaker(id: $id) {
+      id
+      name
+      bio
+      image
+      url
     }
   }
 `;
