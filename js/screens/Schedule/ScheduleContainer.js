@@ -4,6 +4,7 @@ import Loader from '../../components/Loader';
 import {Query} from 'react-apollo';
 import {ALL_SESSIONS} from '../../config/queries';
 import {formatSessionData} from './formatSessionData';
+import {FavesContext} from '../../context/FavesContext';
 
 class ScheduleContainer extends Component {
   render() {
@@ -17,7 +18,13 @@ class ScheduleContainer extends Component {
               if (data) {
                 const {navigation} = this.props;
                 const sessions = formatSessionData(data.allSessions);
-                return <Schedule navigation={navigation} sessions={sessions} />;
+                return (
+                  <Schedule
+                    navigation={navigation}
+                    sessions={sessions}
+                    faveIds={value.faveIds}
+                  />
+                );
               }
             }}
           </Query>
