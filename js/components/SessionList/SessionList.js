@@ -1,27 +1,28 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import {useQuery} from '@apollo/react-hooks';
-import {ALL_SESSIONS} from '../../config/queries';
-import Loader from '../Loader';
+import {SectionList, View, Text} from 'react-native';
+import SessionListItem from '../SessionListItem/SessionListItem';
+import moment from 'moment';
+import styles from './styles';
 
-const SessionListItem = ({title}) => {
+const SessionList = ({sessions, navigation, faveIds}) => {
   return (
     <View>
-      <Text>{title}</Text>
+      <SectionList
+        sections={sessions}
+        renderSectionHeader={({section: {title}}) => (
+          <View>
+            <Text>{moment(title).format('LT')}</Text>
+          </View>
+        )}
+        renderItem={({item}) => (
+          <SessionListItem
+            item={item}
+            navigation={navigation}
+            faveIds={faveIds}
+          />
+        )}></SectionList>
     </View>
   );
-};
-
-const SessionList = () => {
-  const {loading, error, data} = useQuery(ALL_SESSIONS);
-
-  if (loading) {
-    return <Loader />;
-  }
-  if (error) {
-    return <p>Error</p>;
-  }
-  return <SessionListItem />;
 };
 
 export default SessionList;
