@@ -1,11 +1,62 @@
 import React from 'react';
-import {Text, View, Image} from 'react-native';
+import {
+  SafeAreaView,
+  Text,
+  View,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import styles from './styles';
 
-const Speaker = props => {
+const Speaker = ({speaker, navigation}) => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Image source={require('../../assets/images/r10_logo.png')} />
-      <Text>Speaker</Text>
+    <View style={styles.background}>
+      <SafeAreaView>
+        <View>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Icon
+              style={styles.closeMarker}
+              name="close"
+              size={25}
+              color="white"
+            />
+          </TouchableOpacity>
+        </View>
+        <Text style={styles.aboutSpeaker}>About the Speaker</Text>
+      </SafeAreaView>
+      <View style={styles.container}>
+        <Image style={styles.image} source={{uri: `${speaker.image}`}} />
+        <Text style={styles.name}>{speaker.name}</Text>
+        <Text>{speaker.bio}</Text>
+
+        <TouchableOpacity
+          onPress={() => {
+            Linking.openURL(`${speaker.url}`).catch(err =>
+              console.error('There was a problem, please go back.', err),
+            );
+          }}>
+          <View style={styles.button}>
+            <LinearGradient
+              colors={['#9963ea', '#8797D6']}
+              start={{x: 0.0, y: 1.0}}
+              end={{x: 1.0, y: 0.0}}
+              style={[
+                StyleSheet.absoluteFill,
+                {
+                  height: '100%',
+                  width: '100%',
+                  borderRadius: 50,
+                },
+              ]}
+            />
+            <Text style={styles.buttonText}>Read More on Wikipedia</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
