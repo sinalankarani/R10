@@ -9,12 +9,12 @@ const SessionListItem = ({item, navigation, faveIds}) => {
       onPress={() => {
         navigation.navigate('Session', {item, navigation});
       }}>
-      <View>
-        <Text>{item.title}</Text>
+      <View style={styles.itemInfo}>
+        <Text style={styles.title}>{item.title}</Text>
         <View>
-          <Text>{item.location}</Text>
+          <Text style={styles.location}>{item.location}</Text>
           {faveIds?.includes(item.id) && (
-            <Icon name="heart" color="#cf392a" size={20} />
+            <Icon name="heart" color="#cf392a" size={22} />
           )}
         </View>
       </View>
