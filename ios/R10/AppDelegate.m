@@ -6,7 +6,6 @@
  */
 
 #import "AppDelegate.h"
-#import "apiKey.swift"
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -18,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//   [GMSServices provideAPIKey:@"{apiKey}"];
+//   [GMSServices provideAPIKey:@"APIKey"];
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
