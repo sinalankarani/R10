@@ -9,8 +9,8 @@ const About = ({data}) => {
       <View style={styles.logo}>
         <Image source={require('../../assets/images/r10_logo.png')} />
       </View>
-      <View style={styles.text}>
-        <Text>
+      <View>
+        <Text style={styles.text}>
           R10 is a conference that focuses on just about any topic related to
           dev.
         </Text>

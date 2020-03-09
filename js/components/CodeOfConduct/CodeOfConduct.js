@@ -94,9 +94,7 @@ const CodeOfConduct = ({item}) => {
 
         <Text style={styles.title}>{item.title}</Text>
       </View>
-      <Text style={(styles.description, {height: expandItem})}>
-        {item.description}
-      </Text>
+      <Text style={{height: expandItem}}>{item.description}</Text>
     </TouchableOpacity>
   );
 };

@@ -22,6 +22,8 @@ const styles = StyleSheet.create({
   },
   text: {
     padding: 10,
+    fontFamily: 'Montserrat',
+    fontWeight: '200',
   },
   copyright: {
     fontSize: 16,
