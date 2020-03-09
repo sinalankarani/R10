@@ -26,6 +26,7 @@ class FavesProvider extends Component {
       if (newFav) {
         this.setState({faveIds: [...this.state.faveIds, newFav.id]});
       }
+
       this.getFavedSessionIds();
       console.log(this.state.faveIds);
     } catch (e) {

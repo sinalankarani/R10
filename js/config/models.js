@@ -2,9 +2,10 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 export const createFave = async faveId => {
   try {
+    console.log();
     return await AsyncStorage.setItem(
       `${faveId}`,
-      JSON.stringify({id: faveId, fave_on: new Date()}),
+      JSON.stringify({id: faveId, faved_on: new Date()}),
     );
   } catch (e) {
     throw e;

@@ -23,7 +23,6 @@ class FavesContainer extends Component {
                 const checkFaves = data.allSessions.filter(session =>
                   value.faveIds.includes(session.id),
                 );
-                console.log(checkFaves);
                 const {navigation} = this.props;
                 const sessions = formatSessionData(checkFaves);
 
