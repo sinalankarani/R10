@@ -18,6 +18,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#e6e6e6',
   },
+  faveIcon: {
+    alignSelf: 'flex-end',
+  },
+  faveIconBox: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });
 
 export default styles;

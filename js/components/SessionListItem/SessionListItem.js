@@ -11,10 +11,15 @@ const SessionListItem = ({item, navigation, faveIds}) => {
       }}>
       <View style={styles.itemInfo}>
         <Text style={styles.title}>{item.title}</Text>
-        <View>
+        <View style={styles.faveIconBox}>
           <Text style={styles.location}>{item.location}</Text>
           {faveIds?.includes(item.id) && (
-            <Icon name="heart" color="#cf392a" size={22} />
+            <Icon
+              style={styles.faveIcon}
+              name="heart"
+              color="#cf392a"
+              size={18}
+            />
           )}
         </View>
       </View>

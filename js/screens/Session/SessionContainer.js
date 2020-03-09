@@ -4,11 +4,10 @@ import {FavesContext} from '../../context/FavesContext';
 
 class SessionContainer extends Component {
   render() {
-    // console.log(this.props.route.params.item);
     return (
       <FavesContext.Consumer>
         {item => (
-          console.log(item),
+          console.log(this.props.route.params),
           (
             <Session
               navigation={this.props.navigation}
