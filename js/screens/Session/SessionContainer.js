@@ -7,16 +7,13 @@ class SessionContainer extends Component {
     return (
       <FavesContext.Consumer>
         {item => (
-          console.log(this.props.route.params),
-          (
-            <Session
-              navigation={this.props.navigation}
-              item={this.props.route.params.item}
-              faveIds={item.faveIds}
-              addFaveSession={item.addFaveSession}
-              removeFaveSession={item.removeFaveSession}
-            />
-          )
+          <Session
+            navigation={this.props.navigation}
+            item={this.props.route.params.item}
+            faveIds={item.faveIds}
+            addFaveSession={item.addFaveSession}
+            removeFaveSession={item.removeFaveSession}
+          />
         )}
       </FavesContext.Consumer>
     );

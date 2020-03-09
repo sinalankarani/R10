@@ -9,10 +9,10 @@ const SessionList = ({sessions, navigation, faveIds}) => {
     <View>
       <SectionList
         sections={sessions}
-        keyExtractor={item => item.id}
-        renderSectionHeader={({section: {item}}) => (
+        keyExtractor={session => session.id}
+        renderSectionHeader={({section: {title}}) => (
           <View>
-            <Text style={styles.date}>{moment(item).format('LT')}</Text>
+            <Text style={styles.date}>{moment(title).format('LT')}</Text>
           </View>
         )}
         renderItem={({item}) => (

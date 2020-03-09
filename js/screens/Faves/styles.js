@@ -6,6 +6,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  text: {
+    fontFamily: 'Montserrat',
+  },
 });
 
 export default styles;
