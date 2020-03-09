@@ -8,19 +8,27 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   logo: {
-    marginBottom: 10,
-    lineHeight: 2,
-    borderBottomWidth: 1,
-    borderBottomColor: '#999',
+    width: '100%',
+    paddingBottom: 10,
+    borderBottomWidth: 1.5,
+    borderBottomColor: '#e6e6e6',
+    alignItems: 'center',
   },
   header: {
-    textAlign: 'center',
-    fontSize: 30,
+    textAlign: 'left',
+    padding: 10,
+    fontSize: 24,
+    fontFamily: 'Montserrat',
+  },
+  text: {
+    padding: 10,
   },
   copyright: {
-    color: '#999',
-    fontSize: 20,
+    fontSize: 16,
     borderTopWidth: 2,
+    fontWeight: '300',
+    alignSelf: 'flex-start',
+    padding: 10,
   },
 });
 
