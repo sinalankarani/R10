@@ -1,10 +1,11 @@
 import React from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
+import {Text, View} from 'react-native';
 import SessionList from '../../components/SessionList';
+import styles from '../../components/SessionListItem/styles';
 
 const Faves = ({navigation, sessions, faveIds}) => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={styles.container}>
       {sessions.length === 0 && (
         <Text>You don't have any favourite sessions</Text>
       )}
