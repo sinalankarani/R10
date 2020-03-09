@@ -39,7 +39,7 @@ export const SINGLE_SESSION = gql`
   }
 `;
 
-export const CODE_OF_CONDUCT = gql`
+export const CODE_OF_CONDUCTS = gql`
   {
     allConducts {
       id
@@ -50,7 +50,7 @@ export const CODE_OF_CONDUCT = gql`
   }
 `;
 
-export const SINGLE_SPEAKER = gql`
+export const SPEAKER = gql`
   query Speaker($id: ID!) {
     Speaker(id: $id) {
       id
