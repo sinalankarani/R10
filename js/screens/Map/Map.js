@@ -6,6 +6,8 @@ import MapView, {
   Callout,
   Polygon,
 } from 'react-native-maps';
+// import Geolocation from '@react-native-community/geolocation';
+
 import styles from './styles';
 
 const MapScreen = props => {
