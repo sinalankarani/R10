@@ -15,10 +15,15 @@ const Session = ({
   return (
     <View style={styles.container}>
       <View>
-        <View>
+        <View style={styles.faveIconBox}>
           <Text style={styles.location}>{item.location}</Text>
           {faveIds.includes(item.id) && (
-            <Icon name="heart" color="#cf392a" size={20} />
+            <Icon
+              style={styles.faveIcon}
+              name="heart"
+              color="#cf392a"
+              size={20}
+            />
           )}
         </View>
         <Text style={styles.title}>{item.title}</Text>
@@ -71,8 +76,7 @@ const Session = ({
             onPress={() => {
               removeFaveSession(item.id);
             }}>
-            <View>
-              <Text>Remove from Faves</Text>
+            <View style={styles.button}>
               <LinearGradient
                 colors={['#9963ea', '#8797D6']}
                 start={{x: 0.0, y: 1.0}}
@@ -82,6 +86,7 @@ const Session = ({
                   {height: '100%', width: 'auto', borderRadius: 50},
                 ]}
               />
+              <Text style={styles.buttonText}>Remove from Faves</Text>
             </View>
           </TouchableOpacity>
         )}

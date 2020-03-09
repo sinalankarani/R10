@@ -30,6 +30,13 @@ const styles = StyleSheet.create({
     fontWeight: '200',
     paddingBottom: 10,
   },
+  faveIcon: {
+    alignSelf: 'flex-end',
+  },
+  faveIconBox: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   presented: {
     fontFamily: 'Montserrat',
     fontSize: 15,
