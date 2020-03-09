@@ -39,7 +39,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   buttonText: {
-    padding: 5,
+    padding: 10,
+    fontWeight: '500',
+    fontSize: 16,
     color: 'white',
   },
   closeMarker: {

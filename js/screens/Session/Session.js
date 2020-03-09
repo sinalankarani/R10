@@ -13,29 +13,32 @@ const Session = ({
   faveIds,
 }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <View>
         <View>
-          <Text>{item.location}</Text>
+          <Text style={styles.location}>{item.location}</Text>
           {faveIds.includes(item.id) && (
             <Icon name="heart" color="#cf392a" size={20} />
           )}
         </View>
-        <Text>{item.title}</Text>
-        <Text>{moment(item.startTime).format('LT')}</Text>
-        <Text>{item.description}</Text>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.time}>{moment(item.startTime).format('LT')}</Text>
+        <Text style={styles.description}>{item.description}</Text>
         <View>
           {item.speaker && (
             <>
-              <Text>Presented by:</Text>
-              <View>
-                <Image source={{uri: `${item.speaker.image}`}} />
+              <Text style={styles.presented}>Presented by:</Text>
+              <View style={styles.speakerBox}>
+                <Image
+                  style={styles.image}
+                  source={{uri: `${item.speaker.image}`}}
+                />
 
                 <TouchableOpacity
                   onPress={() => {
                     navigation.navigate('Speaker', {id: item.speaker.id});
                   }}>
-                  <Text>{item.speaker.name}</Text>
+                  <Text style={styles.speaker}>{item.speaker.name}</Text>
                 </TouchableOpacity>
               </View>
             </>
@@ -50,17 +53,17 @@ const Session = ({
               addFaveSession(item.id);
               console.log(item);
             }}>
-            <View>
+            <View style={styles.button}>
               <LinearGradient
                 colors={['#9963ea', '#8797D6']}
                 start={{x: 0.0, y: 1.0}}
                 end={{x: 1.0, y: 0.0}}
                 style={[
                   StyleSheet.absoluteFill,
-                  {height: '100%', width: '25%', borderRadius: 50},
+                  {height: '100%', width: 'auto', borderRadius: 50},
                 ]}
               />
-              <Text>Add to Faves</Text>
+              <Text style={styles.buttonText}>Add to Faves</Text>
             </View>
           </TouchableOpacity>
         ) : (
@@ -76,7 +79,7 @@ const Session = ({
                 end={{x: 1.0, y: 0.0}}
                 style={[
                   StyleSheet.absoluteFill,
-                  {height: '100%', width: '25%', borderRadius: 50},
+                  {height: '100%', width: 'auto', borderRadius: 50},
                 ]}
               />
             </View>

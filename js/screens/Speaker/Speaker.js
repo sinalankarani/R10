@@ -48,7 +48,7 @@ const Speaker = ({speaker, navigation}) => {
                 StyleSheet.absoluteFill,
                 {
                   height: '100%',
-                  width: '100%',
+                  width: 'auto',
                   borderRadius: 50,
                 },
               ]}
