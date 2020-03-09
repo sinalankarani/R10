@@ -7,7 +7,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
+    textAlign: 'center',
     fontFamily: 'Montserrat',
+    padding: 10,
   },
 });
 
