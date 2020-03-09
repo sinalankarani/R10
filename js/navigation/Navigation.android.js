@@ -43,11 +43,34 @@ const AboutStackScreens = props => (
 
 const Drawer = createDrawerNavigator();
 const DrawerNav = props => (
-  <Drawer.Navigator>
+  <Drawer.Navigator
+    drawerContentOptions={{
+      activeTintColor: '#9963ea',
+      inactiveTintColor: '#999',
+      labelStyle: {fontSize: 16, fontFamily: 'Montserrat'},
+      style: {
+        backgroundColor: 'white',
+      },
+    }}
+    screenOptions={({route}) => ({
+      drawerIcon: ({focused, color, size}) => {
+        let iconName;
+        if (route.name === 'Schedule') {
+          iconName = focused ? 'calendar' : 'calendar-blank-outline';
+        } else if (route.name === 'Faves') {
+          iconName = focused ? 'heart' : 'heart-outline';
+        } else if (route.name === 'Maps') {
+          iconName = focused ? 'map' : 'map-outline';
+        } else if (route.name === 'About') {
+          iconName = focused ? 'information' : 'information-outline';
+        }
+        return <Icon name={iconName} size={size} color={color} />;
+      },
+    })}>
     <Drawer.Screen name="Schedule" component={ScheduleStackScreens} />
     <Drawer.Screen name="Maps" component={MapStackScreens} />
     <Drawer.Screen name="Faves" component={FaveStackScreens} />
-    <Drawer.Screen name="Session" component={AboutStackScreens} />
+    <Drawer.Screen name="About" component={AboutStackScreens} />
   </Drawer.Navigator>
 );
 
