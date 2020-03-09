@@ -9,9 +9,7 @@ class FavesProvider extends Component {
       faveIds: [],
     };
   }
-  componentDidMount() {
-    this.getFavedSessionIds();
-  }
+
   getFavedSessionIds = async () => {
     try {
       const faves = await queryFaves();
@@ -29,6 +27,7 @@ class FavesProvider extends Component {
         this.setState({faveIds: [...this.state.faveIds, newFav.id]});
       }
       this.getFavedSessionIds();
+      console.log(this.state.faveIds);
     } catch (e) {
       console.log(e);
     }
@@ -42,6 +41,10 @@ class FavesProvider extends Component {
       console.log(e);
     }
   };
+
+  componentDidMount() {
+    this.getFavedSessionIds();
+  }
   render() {
     return (
       <FavesContext.Provider

@@ -25,16 +25,21 @@ const Session = ({
         <Text>{moment(item.startTime).format('LT')}</Text>
         <Text>{item.description}</Text>
         <View>
-          <Text>Presented by:</Text>
-          <View>
-            <Image source={{uri: `${item.speaker.image}`}} />
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('Speaker', {id: item.speaker.id});
-              }}>
-              <Text>{item.speaker.name}</Text>
-            </TouchableOpacity>
-          </View>
+          {item.speaker && (
+            <>
+              <Text>Presented by:</Text>
+              <View>
+                <Image source={{uri: `${item.speaker.image}`}} />
+
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Speaker', {id: item.speaker.id});
+                  }}>
+                  <Text>{item.speaker.name}</Text>
+                </TouchableOpacity>
+              </View>
+            </>
+          )}
         </View>
       </View>
 
@@ -43,6 +48,7 @@ const Session = ({
           <TouchableOpacity
             onPress={() => {
               addFaveSession(item.id);
+              console.log(item);
             }}>
             <View>
               <LinearGradient

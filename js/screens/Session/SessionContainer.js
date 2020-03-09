@@ -4,16 +4,20 @@ import {FavesContext} from '../../context/FavesContext';
 
 class SessionContainer extends Component {
   render() {
+    // console.log(this.props.route.params.item);
     return (
       <FavesContext.Consumer>
-        {value => (
-          <Session
-            navigation={this.props.navigation}
-            item={this.props.route.params.item}
-            faveIds={value.faveIds}
-            addFaveSession={value.addFaveSession}
-            removeFaveSession={value.removeFaveSession}
-          />
+        {item => (
+          console.log(item),
+          (
+            <Session
+              navigation={this.props.navigation}
+              item={this.props.route.params.item}
+              faveIds={item.faveIds}
+              addFaveSession={item.addFaveSession}
+              removeFaveSession={item.removeFaveSession}
+            />
+          )
         )}
       </FavesContext.Consumer>
     );
