@@ -1,7 +1,6 @@
 import React from 'react';
-import {Text, View, Image, Alert} from 'react-native';
+import {Text} from 'react-native';
 import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
-// import Geolocation from '@react-native-community/geolocation';
 
 import styles from './styles';
 
