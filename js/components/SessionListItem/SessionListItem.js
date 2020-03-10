@@ -6,6 +6,7 @@ import styles from './styles';
 const SessionListItem = ({item, navigation, faveIds}) => {
   return (
     <TouchableHighlight
+      underlayColor="transparent"
       onPress={() => {
         navigation.navigate('Session', {item, navigation});
       }}>

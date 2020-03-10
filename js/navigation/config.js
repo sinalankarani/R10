@@ -17,7 +17,6 @@ const GradientHeader = props => (
 );
 
 const MenuButton = ({navigation, route}) => {
-  console.log(route);
   return route.name === 'Session' ? (
     <Icon
       name="chevron-left"
