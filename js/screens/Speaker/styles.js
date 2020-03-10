@@ -15,13 +15,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 20,
     alignSelf: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+  },
+  header: {
+    flexDirection: 'row',
   },
   aboutSpeaker: {
     color: 'white',
-    alignSelf: 'center',
-    marginTop: 40,
-    fontSize: 20,
+    fontSize: 15,
+    paddingLeft: '25%',
+    fontFamily: 'Montserrat',
   },
   image: {
     width: 100,
@@ -32,6 +35,12 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 30,
     margin: 10,
+    fontFamily: 'Montserrat',
+  },
+  bio: {
+    fontFamily: 'Montserrat',
+    fontWeight: '200',
+    fontSize: 15,
   },
   button: {
     height: 40,
@@ -39,15 +48,15 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   buttonText: {
+    fontFamily: 'Montserrat',
     padding: 10,
     fontWeight: '500',
-    fontSize: 16,
+    fontSize: 15,
     color: 'white',
   },
   closeMarker: {
-    position: 'absolute',
-    top: 0,
-    left: 15,
+    alignSelf: 'flex-start',
+    paddingLeft: 10,
   },
 });
 

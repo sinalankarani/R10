@@ -33,19 +33,17 @@ const Session = ({
           {item.speaker && (
             <>
               <Text style={styles.presented}>Presented by:</Text>
-              <View style={styles.speakerBox}>
+              <TouchableOpacity
+                style={styles.speakerBox}
+                onPress={() => {
+                  navigation.navigate('Speaker', {id: item.speaker.id});
+                }}>
                 <Image
                   style={styles.image}
                   source={{uri: `${item.speaker.image}`}}
                 />
-
-                <TouchableOpacity
-                  onPress={() => {
-                    navigation.navigate('Speaker', {id: item.speaker.id});
-                  }}>
-                  <Text style={styles.speaker}>{item.speaker.name}</Text>
-                </TouchableOpacity>
-              </View>
+                <Text style={styles.speaker}>{item.speaker.name}</Text>
+              </TouchableOpacity>
             </>
           )}
         </View>

@@ -16,7 +16,7 @@ const Speaker = ({speaker, navigation}) => {
   return (
     <View style={styles.background}>
       <SafeAreaView>
-        <View>
+        <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Icon
               style={styles.closeMarker}
@@ -25,13 +25,13 @@ const Speaker = ({speaker, navigation}) => {
               color="white"
             />
           </TouchableOpacity>
+          <Text style={styles.aboutSpeaker}>About the Speaker</Text>
         </View>
-        <Text style={styles.aboutSpeaker}>About the Speaker</Text>
       </SafeAreaView>
       <View style={styles.container}>
         <Image style={styles.image} source={{uri: `${speaker.image}`}} />
         <Text style={styles.name}>{speaker.name}</Text>
-        <Text>{speaker.bio}</Text>
+        <Text style={styles.bio}>{speaker.bio}</Text>
 
         <TouchableOpacity
           onPress={() => {

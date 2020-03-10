@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
+    fontFamily: 'Montserrat',
     fontWeight: '500',
     fontSize: 14,
     padding: 10,
