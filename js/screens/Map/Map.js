@@ -1,11 +1,15 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {View, Text, Platform} from 'react-native';
 import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
 
 import styles from './styles';
 
 const MapScreen = props => {
-  return (
+  return Platform.OS === 'android' ? (
+    <View style={styles.androidSucks}>
+      <Text>Get an iPhone dude!</Text>
+    </View>
+  ) : (
     <MapView
       style={styles.map}
       showsUserLocation={true}
