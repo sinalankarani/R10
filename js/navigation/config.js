@@ -29,7 +29,7 @@ const MenuButton = props => {
 };
 
 export const sharedScreenOptions = props => ({
-  headerBackTitle: null,
+  headerBackTitleVisible: false,
   header: props => <GradientHeader {...props} />,
   headerStyle: {
     backgroundColor: 'transparent',

@@ -13,15 +13,27 @@ import {sharedScreenOptions} from './config';
 const ScheduleStack = createStackNavigator();
 const ScheduleStackScreens = props => (
   <ScheduleStack.Navigator screenOptions={sharedScreenOptions}>
-    <ScheduleStack.Screen name="Schedule" component={Schedule} />
-    <ScheduleStack.Screen name="Session" component={Session} />
+    <ScheduleStack.Screen
+      options={{headerTintColor: 'white'}}
+      name="Schedule"
+      component={Schedule}
+    />
+    <ScheduleStack.Screen
+      options={{headerTintColor: 'white'}}
+      name="Session"
+      component={Session}
+    />
   </ScheduleStack.Navigator>
 );
 
 const MapStack = createStackNavigator();
 const MapStackScreens = props => (
   <MapStack.Navigator screenOptions={sharedScreenOptions}>
-    <MapStack.Screen name="Maps" component={MapScreen} />
+    <MapStack.Screen
+      options={{headerTintColor: 'white'}}
+      name="Maps"
+      component={MapScreen}
+    />
   </MapStack.Navigator>
 );
 
@@ -30,14 +42,26 @@ const FaveStackScreens = props => (
   <FaveStack.Navigator
     initialRouteName="Faves"
     screenOptions={sharedScreenOptions}>
-    <FaveStack.Screen name="Faves" component={Faves} />
-    <FaveStack.Screen name="Session" component={Session} />
+    <FaveStack.Screen
+      options={{headerTintColor: 'white'}}
+      name="Faves"
+      component={Faves}
+    />
+    <FaveStack.Screen
+      options={{headerTintColor: 'white'}}
+      name="Session"
+      component={Session}
+    />
   </FaveStack.Navigator>
 );
 const AboutStack = createStackNavigator();
 const AboutStackScreens = props => (
   <AboutStack.Navigator screenOptions={sharedScreenOptions}>
-    <AboutStack.Screen name="About" component={About} />
+    <AboutStack.Screen
+      options={{headerTintColor: 'white'}}
+      name="About"
+      component={About}
+    />
   </AboutStack.Navigator>
 );
 
