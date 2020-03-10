@@ -56,7 +56,6 @@ const Session = ({
           <TouchableOpacity
             onPress={() => {
               addFaveSession(item.id);
-              console.log(item);
             }}>
             <View style={styles.button}>
               <LinearGradient

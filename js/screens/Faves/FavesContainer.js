@@ -4,7 +4,7 @@ import {ALL_SESSIONS} from '../../config/queries';
 import Faves from './Faves';
 import {FavesContext} from '../../context/FavesContext';
 import {formatSessionData} from '../../screens/Schedule/formatSessionData';
-import {ActivityIndicator} from 'react-native';
+import Loader from '../../components/Loader';
 
 class FavesContainer extends Component {
   constructor(props) {
